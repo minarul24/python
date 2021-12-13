@@ -1,3 +1,7 @@
+# Beginner Project 1
+# Madlib - user inputs some strings to fill in the blanks
+# Outputs the entire string
+
 
 adjective = input("Please enter an Adjective for the madlib game: ")
 adjective_2 = input("Please, enter another adjective: ")
