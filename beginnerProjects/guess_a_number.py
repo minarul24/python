@@ -6,8 +6,29 @@ def guess():
     f'then state the upper bound. The program will then generate a number randomly in boundary'\
           f'range provided. Finally, it will ask you guess the number!')
 
-    lower_bound = input("Please, enter the lower bound: ")
-    upper_bound = input("Please, enter the upper bound: ")
+    lower_bound = int(input("Please, enter the lower bound: "))
+    upper_bound = int(input("Please, enter the upper bound: "))
+
+    number = random.randint(lower_bound,upper_bound)
+
+    user_input = int(input("Please, enter your GUESS: "))
+
+    if user_input == number:
+        print(f"Congratulations! You have entered {user_input}. {number} is the correct answer!")
+
+    else:
+        while user_input != number:
+            if int(user_input) == number:
+                print(f"Congratulations! You have entered {user_input} and {number} is the correct answer!")
+                break
+
+            elif user_input == '0':
+                print(f"Thank you for playing! The number was {number}.")
+                break
+
+            else:
+                user_input = input(
+                    "Sorry, you guessed the wrong number. To continue, enter another number or press '0' to QUIT: ")
 
 
 # The function/method is called to run program guess()
