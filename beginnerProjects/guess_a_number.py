@@ -13,22 +13,45 @@ def guess():
 
     user_input = int(input("Please, enter your GUESS: "))
 
-    if user_input == number:
-        print(f"Congratulations! You have entered {user_input}. {number} is the correct answer!")
+    if lower_bound <= user_input <= upper_bound:
+        if user_input == number:
+            print(f"Congratulations! You have entered {user_input}. {number} is the correct answer!")
 
-    else:
-        while user_input != number:
-            if int(user_input) == number:
-                print(f"Congratulations! You have entered {user_input} and {number} is the correct answer!")
-                break
+        else:
+            while user_input != number:
+                if int(user_input) == number:
+                    print(f"Congratulations! You have entered {user_input} and {number} is the correct answer!")
+                    break
 
-            elif user_input == '0':
-                print(f"Thank you for playing! The number was {number}.")
-                break
+                elif user_input == '0':
+                    print(f"Thank you for playing! The number was {number}.")
+                    break
 
-            else:
-                user_input = input(
-                    "Sorry, you guessed the wrong number. To continue, enter another number or press '0' to QUIT: ")
+                else:
+                    user_input = input(
+                        "Sorry, you guessed the wrong number. To continue, enter another number or press '0' to QUIT: ")
+
+    elif user_input > upper_bound or user_input < lower_bound:
+        print(f'The number you entered, is not in the provided range')
+
+        if user_input == number:
+            print(f"Congratulations! You have entered {user_input}. {number} is the correct answer!")
+
+        else:
+            while user_input != number:
+                if int(user_input) == number:
+                    print(f"Congratulations! You have entered {user_input} and {number} is the correct answer!")
+                    break
+
+                elif user_input == '0':
+                    print(f"Thank you for playing! The number was {number}.")
+                    break
+
+                else:
+                    user_input = input(
+                        "Sorry, you guessed the wrong number. To continue, enter another number or press '0' to QUIT: ")
+
+
 
 
 # The function/method is called to run program guess()
