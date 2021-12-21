@@ -2,14 +2,14 @@ import random
 
 
 def guess():
-    print(f'This is a number guessing game. It will first ask you to state the lower bound and '\
-    f'then state the upper bound. The program will then generate a number randomly in boundary'\
-          f'range provided. Finally, it will ask you guess the number!')
+    print(f'This is a number guessing game. It will first ask you to state the lower bound and then state the upper '
+          f'bound. The program will then generate a number randomly in boundary range provided. Finally, it will ask '
+          f'you guess the number!')
 
     lower_bound = int(input("Please, enter the lower bound: "))
     upper_bound = int(input("Please, enter the upper bound: "))
 
-    number = random.randint(lower_bound,upper_bound)
+    number = random.randint(lower_bound, upper_bound)
 
     user_input = int(input("Please, enter your GUESS: "))
 
@@ -50,8 +50,6 @@ def guess():
                 else:
                     user_input = input(
                         "Sorry, you guessed the wrong number. To continue, enter another number or press '0' to QUIT: ")
-
-
 
 
 # The function/method is called to run program guess()
