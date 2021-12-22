@@ -23,12 +23,13 @@ def game_decision(username, user, computer):
         print(f'{username}: {user} \nComputer: {computer} \nIt\'s a TIE!')
 
     # paper wins against rock, rock wins against scissors, scissor wins against paper
+    # conditions for user win
     elif (user == 'r' and computer == 's') or (user == 's' and computer == 'p') or (user == 'p' and computer == 'r'):
         print(f'{username}: {user} \nComputer: {computer} \n{username} WON!')
-
+    # conditions  for computer win
     elif (user == 's' and computer == 'r') or (user == 'p' and computer == 's') or (user == 'r' and computer == 'p'):
         print(f'{username}: {user} \nComputer: {computer} \n{username}, you LOST!')
-
+    # condition for quitting
     elif user == 'q':
         print(f'Game Ends')
 
