@@ -1,6 +1,11 @@
 import random
 
 
+# Counts how many times won, lost or tied
+counter_win = 0
+counter_lost = 0
+counter_tie = 0
+
 def game():
     print(f'Welcome to Rock, Paper and Scissor Game!')
 
