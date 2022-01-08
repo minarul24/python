@@ -1,9 +1,9 @@
 import random
 
 # Counts how many times won, lost or tied
-global counter_tie
-global counter_lost
-global counter_win
+counter_tie = 0
+counter_lost = 0
+counter_win = 0
 
 
 def game():
@@ -21,6 +21,7 @@ def game():
         # calls the gam_decision method to decide who wins
         game_decision(user_name, user_input, computer_input)
 
+    # prints the game results after the game is quit
     print(f'Stats: \n{user_name} -> WON: {counter_win}, LOST: {counter_lost} & TIED: {counter_tie}')
     print(f'{user_name}, thank you for playing!')
 
@@ -28,16 +29,14 @@ def game():
 # The method verifies if the user or the computer won the game
 def game_decision(username, user, computer):
 
-    counter_tie = 0
-    counter_lost = 0
-    counter_win = 0
-
+    # Using global so that the variable can be used within this method
+    global counter_tie
+    global counter_lost
+    global counter_win
 
     if user == computer:
         print(f'{username}: {user} \nComputer: {computer} \nIt\'s a TIE!')
-        print(counter_tie)
         counter_tie += 1
-        print(counter_tie)
 
     # paper wins against rock, rock wins against scissors, scissor wins against paper
     # conditions for user win
