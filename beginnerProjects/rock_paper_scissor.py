@@ -1,7 +1,9 @@
 import random
 
-
-
+# Counts how many times won, lost or tied
+global counter_tie
+global counter_lost
+global counter_win
 
 
 def game():
@@ -9,6 +11,7 @@ def game():
 
     user_name = input("Please enter your name: ")
     user_input = 0
+
     while user_input != 'q':
         # user input is taken, whats their choice from rock, paper and scissor!
         user_input = input("Choose 'r' for rock, 'p' for paper and 's' for scissor \n or choose 'q' to quit: \n")
@@ -18,19 +21,23 @@ def game():
         # calls the gam_decision method to decide who wins
         game_decision(user_name, user_input, computer_input)
 
+    print(f'Stats: \n{user_name} -> WON: {counter_win}, LOST: {counter_lost} & TIED: {counter_tie}')
     print(f'{user_name}, thank you for playing!')
 
 
 # The method verifies if the user or the computer won the game
 def game_decision(username, user, computer):
-    # Counts how many times won, lost or tied
-    counter_win = 0
-    counter_lost = 0
+
     counter_tie = 0
+    counter_lost = 0
+    counter_win = 0
+
 
     if user == computer:
         print(f'{username}: {user} \nComputer: {computer} \nIt\'s a TIE!')
+        print(counter_tie)
         counter_tie += 1
+        print(counter_tie)
 
     # paper wins against rock, rock wins against scissors, scissor wins against paper
     # conditions for user win
@@ -44,7 +51,6 @@ def game_decision(username, user, computer):
     # condition for quitting
     elif user == 'q':
         print(f'Game Ends')
-        print(f'Stats: \n{username} -> WON: {counter_win}, LOST: {counter_lost} & TIED: {counter_tie}')
 
 
 # The function game() gets called to run the program
